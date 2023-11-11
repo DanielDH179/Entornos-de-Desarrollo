@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este repositorio recoge todas los proyectos del módulo, así como actividades y otros archivos.
+Este repositorio recoge los proyectos del módulo, así como otras actividades y archivos.
 
 ## Autor
 
