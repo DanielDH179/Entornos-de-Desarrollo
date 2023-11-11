@@ -6,11 +6,11 @@ Realiza las siguientes actividades utilizando el IDE Eclipse:
 
 1. **Instalar y configurar Maven** comprobando que está instalado.
 
-2. **Crear un proyecto** llamado `fibonacci` del grupo `es.iessoterhernandez.daw.endes` con una clase que tenga un método fibonacci [(Sucesión de Fibonacci - Wikipedia, la enciclopedia libre)](https://es.wikipedia.org/wiki/Sucesi%C3%B3n_de_Fibonacci).
+2. **Crear un proyecto** llamado `fibonacci` del grupo `es.iessoterohernandez.daw.endes` con una clase que tenga un método fibonacci [(Sucesión de Fibonacci - Wikipedia, la enciclopedia libre)](https://es.wikipedia.org/wiki/Sucesi%C3%B3n_de_Fibonacci).
 
-3. **Instalar el proyecto** con la clase fibonacci en el repositorio local y **crear un nuevo proyecto** llamado `fibonacciMain` del grupo `es.iessoterhernandez.daw.endes` que utilice el artefacto anterior (de la clase fibonacci).
+3. **Instalar el proyecto** con la clase fibonacci en el repositorio local y **crear un nuevo proyecto** llamado `fibonacciMain` del grupo `es.iessoterohernandez.daw.endes` que utilice el artefacto anterior (de la clase fibonacci).
 
-4. **Crear un proyecto** llamado `HelloWorldPdf` del grupo `es.iessoterhernandez.daw.endes` con una clase que utilice la librería pdf de iText. Este proyecto debe generar un pdf con un contenido básico (Hola Mundo).
+4. **Crear un proyecto** llamado `HelloWorldPdf` del grupo `es.iessoterohernandez.daw.endes` con una clase que utilice la librería pdf de iText. Este proyecto debe generar un pdf con un contenido básico (Hola Mundo).
 
 5. **Subir el código fuente** de los proyectos a tu repositorio público de [GitHub](https://github.com/DanielDH179/Entornos-de-Desarrollo).
 
