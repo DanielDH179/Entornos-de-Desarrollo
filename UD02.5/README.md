@@ -162,7 +162,7 @@ F(23) = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597,
 Creamos otro proyecto Maven y añadimos la [librería pdf de iText](https://mvnrepository.com/artifact/com.itextpdf/itextpdf/5.5.13.3) al archivo `pom.xml`:
 
 ```xml
-<groupId>es.iessoterhernandez.daw.endes</groupId>
+<groupId>es.iessoterohernandez.daw.endes</groupId>
 <artifactId>HelloWorldPdf</artifactId>
 <version>0.0.1-SNAPSHOT</version>
 
