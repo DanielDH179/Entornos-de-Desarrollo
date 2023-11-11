@@ -210,7 +210,7 @@ Creamos otro proyecto Maven y añadimos la [librería pdf de iText](https://mvnr
 Escribimos el siguiente código con ayuda de las clases pertenecientes a la librería. El documento PDF será generado dentro de la carpeta raíz del proyecto:
 
 ```java
-package es.iessoterhernandez.daw.endes;
+package es.iessoterohernandez.daw.endes;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
@@ -251,3 +251,4 @@ Lanzamos la aplicación desde el IDE y se creará el documento con el contenido 
 
 * [Maven Repository: Search/Browse/Explore](https://mvnrepository.com/)
 * [Stack Overflow: Missing Maven dependencies in Eclipse project](https://stackoverflow.com/questions/4262186/missing-maven-dependencies-in-eclipse-project)
+* [Adding locally hosted code to GitHub](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)
