@@ -59,7 +59,7 @@
           <configuration>
             <archive>
               <manifest>
-                <mainClass>es.iessoterohernandez.daw.endes.App</mainClass>
+                <mainClass>es.iessoterohernandez.daw.endes.FibonacciMain</mainClass>
               </manifest>
             </archive>
           </configuration>
