@@ -2,7 +2,7 @@ package es.iessoterohernandez.daw.endes;
 
 import java.util.Arrays;
 
-public class App {
+public class FibonacciMain {
 
     public static void main(String[] args) {
 
