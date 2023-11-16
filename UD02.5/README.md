@@ -106,7 +106,7 @@ Creamos otro proyecto Maven, esta vez el archivo `pom.xml` tiene esta estructura
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>es.iessoterohernandez.daw.endes.App</mainClass>
+              <mainClass>es.iessoterohernandez.daw.endes.FibonacciMain</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -123,7 +123,7 @@ package es.iessoterohernandez.daw.endes;
 
 import java.util.Arrays;
 
-public class App {
+public class FibonacciMain {
 
     public static void main(String[] args) {
 
@@ -148,7 +148,7 @@ mvn package
 Maven nos ofrece una herramienta para gestionar el classpath ejecutar la aplicación en lugar de ejecutar directamente el JAR:
 
 ```bash
-mvn exec:java -Dexec.mainClass="es.iessoterohernandez.daw.endes.App"
+mvn exec:java -Dexec.mainClass="es.iessoterohernandez.daw.endes.FibonacciMain"
 ```
 
 Otra opción es lanzar la aplicación con Java desde el propio IDE. Hacemos clic derecho en `fibonacciMain` y elegimos <kbd>Run As</kbd> > <kbd>Java Application</kbd>:
@@ -197,7 +197,7 @@ Creamos otro proyecto Maven y añadimos la [librería pdf de iText](https://mvnr
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>es.iessoterohernandez.daw.endes.App</mainClass>
+              <mainClass>es.iessoterohernandez.daw.endes.HelloWorldPdf</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -218,7 +218,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import java.io.FileOutputStream;
 
-public class App {
+public class HelloWorldPdf {
 
     public static void main(String[] args) {
 
