@@ -6,7 +6,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import java.io.FileOutputStream;
 
-public class App {
+public class HelloWorldPdf {
 
     public static void main(String[] args) {
 
