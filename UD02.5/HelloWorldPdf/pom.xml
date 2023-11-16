@@ -60,7 +60,7 @@
           <configuration>
             <archive>
               <manifest>
-                <mainClass>es.iessoterohernandez.daw.endes.App</mainClass>
+                <mainClass>es.iessoterohernandez.daw.endes.HelloWorldPdf</mainClass>
               </manifest>
             </archive>
           </configuration>
