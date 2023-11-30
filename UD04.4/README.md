@@ -9,7 +9,6 @@
 ### Ejercicio 1
 
 ![ejercicio1-1](images/ejercicio1-1.png)
-![ejercicio1-2](images/ejercicio1-2.png)
 
 ### Ejercicio 2
 
