@@ -2,8 +2,7 @@
 
 ## Sistema operativo
 
-* macOS Ventura 13.6.1 ([Ejercicio 1](#ejercicio-1))
-* Windows 10 Pro Education
+* macOS Ventura 13.6.1
 
 ## Paso a paso
 
