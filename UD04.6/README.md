@@ -24,4 +24,4 @@
 
 ### Ejercicio 4
 
-No se permite el acceso hasta que se permita un `pull request` del repositorio `fjdelgadoleal/Entornos_Desarrollo/`.
+No se permite el acceso hasta que se permita un "pull request" del repositorio `fjdelgadoleal/Entornos_Desarrollo/`.
