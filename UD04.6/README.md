@@ -24,7 +24,7 @@
 
 ### Ejercicio 4
 
-![ejercicio4-1](images/ejercicio3-1.png)
-![ejercicio4-2](images/ejercicio3-2.png)
-![ejercicio4-3](images/ejercicio3-3.png)
-![ejercicio4-4](images/ejercicio3-4.png)
+![ejercicio4-1](images/ejercicio4-1.png)
+![ejercicio4-2](images/ejercicio4-2.png)
+![ejercicio4-3](images/ejercicio4-3.png)
+![ejercicio4-4](images/ejercicio4-4.png)
