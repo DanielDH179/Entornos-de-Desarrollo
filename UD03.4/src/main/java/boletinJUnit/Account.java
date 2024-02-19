@@ -28,14 +28,15 @@ public class Account {
     }
 
     public boolean withdraw(float amount, float fee) {
-        if (isValidWithdrawl(amount, fee)) {
+    	boolean valido = isValidWithdraw(amount, fee);
+        if (valido) {
             amount += fee;
-            balance = balance - amount;
+            balance -= amount;
         }
-        return isValidWithdrawl(amount, fee);
+        return valido;
     }
 
-    private boolean isValidWithdrawl(float amount, float fee) {
+    private boolean isValidWithdraw(float amount, float fee) {
         return amount >= 0 && fee >= 0 && amount <= balance;
     }
 
