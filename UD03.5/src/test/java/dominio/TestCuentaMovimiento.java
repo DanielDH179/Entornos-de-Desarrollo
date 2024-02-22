@@ -1,5 +1,7 @@
 package dominio;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.AfterEach;
@@ -13,11 +15,12 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class TestCuenta {
+public class TestCuentaMovimiento {
 	
 	// Sesión de cobertura del 96,9% para Cuenta
-	/** @see Movimiento */ 
+	// Sesión de cobertura del 75,9% para Movimiento
 	Cuenta cuenta;
+	Movimiento mov;
 	
 	@BeforeEach
 	void init() {
@@ -47,6 +50,7 @@ public class TestCuenta {
 			assertThat(cuenta.mMovimientos.size(), is(1));
 			cuenta.retirar(cantidad);
 			assertThat(cuenta.mMovimientos.size(), is(2));
+			assertEquals(cuenta.mMovimientos.get(1).getImporte(), -cantidad);
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
@@ -70,6 +74,7 @@ public class TestCuenta {
 			assertThat(cuenta.mMovimientos.size(), is(1));
 			cuenta.retirar(concepto, cantidad);
 			assertThat(cuenta.mMovimientos.size(), is(2));
+			assertEquals(cuenta.mMovimientos.get(1).getConcepto(), concepto);
 		} catch (Exception ex) {
 			System.out.println(concepto + ": " + ex.getMessage());
 		}
