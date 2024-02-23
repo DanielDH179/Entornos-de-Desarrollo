@@ -2,6 +2,7 @@ package dominio;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Date;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.AfterEach;
@@ -10,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -18,7 +18,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class TestCuentaMovimiento {
 	
 	// Sesión de cobertura del 96,9% para Cuenta
-	// Sesión de cobertura del 75,9% para Movimiento
+	// Sesión de cobertura del 89,7% para Movimiento
 	Cuenta cuenta;
 	Movimiento mov;
 	
@@ -33,7 +33,7 @@ public class TestCuentaMovimiento {
 	}
 	
 	@ParameterizedTest(name = "Ingresar {0}€")
-	@ValueSource(doubles = {0D, 50D, 100D, -100D})
+	@MethodSource("cantidades")
 	void testIngresarDinero(double cantidad) {
 		try {
 			cuenta.ingresar(cantidad);
@@ -43,13 +43,42 @@ public class TestCuentaMovimiento {
 	}
 	
 	@ParameterizedTest(name = "Retirar {0}€")
-	@ValueSource(doubles = {0D, 50D, 100D, -100D})
+	@MethodSource("cantidades")
 	void testRetirarDinero(double cantidad) {
 		try {
 			cuenta.ingresar(80D);
 			assertThat(cuenta.mMovimientos.size(), is(1));
 			cuenta.retirar(cantidad);
 			assertThat(cuenta.mMovimientos.size(), is(2));
+			assertEquals(cuenta.mMovimientos.get(1).getImporte(), -cantidad);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+	}
+	
+	@SuppressWarnings("deprecation")
+	@ParameterizedTest(name = "Ingresar {0}€ en una fecha")
+	@MethodSource("cantidades")
+	void testIngresarDineroConFecha(double cantidad) {
+		try {
+			cuenta.ingresar(cantidad);
+			cuenta.mMovimientos.get(0).setFecha(new Date(2024, 1, 1));
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+	}
+	
+	@SuppressWarnings("deprecation")
+	@ParameterizedTest(name = "Retirar {0}€ en una fecha")
+	@MethodSource("cantidades")
+	void testRetirarDineroConFecha(double cantidad) {
+		try {
+			cuenta.ingresar(80D);
+			assertThat(cuenta.mMovimientos.size(), is(1));
+			cuenta.mMovimientos.get(0).setFecha(new Date(2024, 1, 2));
+			cuenta.retirar(cantidad);
+			assertThat(cuenta.mMovimientos.size(), is(2));
+			cuenta.mMovimientos.get(1).setFecha(new Date(2024, 1, 3));
 			assertEquals(cuenta.mMovimientos.get(1).getImporte(), -cantidad);
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
@@ -78,6 +107,10 @@ public class TestCuentaMovimiento {
 		} catch (Exception ex) {
 			System.out.println(concepto + ": " + ex.getMessage());
 		}
+	}
+	
+	static Stream<Double> cantidades() {
+		return Stream.of(0D, 50D, 100D, -100D);
 	}
 	
 	static Stream<Arguments> ingresosConceptos() {
