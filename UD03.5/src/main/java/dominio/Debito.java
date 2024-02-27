@@ -13,7 +13,7 @@ public class Debito extends Tarjeta {
 	}
 	
 	public void ingresar(double x) throws Exception {
-		this.mCuentaAsociada.retirar("Ingreso en cajero automático", x);
+		this.mCuentaAsociada.ingresar("Ingreso en cajero automático", x);
 	}
 	
 	public void pagoEnEstablecimiento(String datos, double x) throws Exception {

@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -20,7 +21,6 @@ public class TestCuentaMovimiento {
 	// Sesión de cobertura del 96,9% para Cuenta
 	// Sesión de cobertura del 89,7% para Movimiento
 	Cuenta cuenta;
-	Movimiento mov;
 	
 	@BeforeEach
 	void init() {
@@ -37,6 +37,7 @@ public class TestCuentaMovimiento {
 	void testIngresarDinero(double cantidad) {
 		try {
 			cuenta.ingresar(cantidad);
+			assertThat(cuenta.mMovimientos.size(), is(1));
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
@@ -62,7 +63,9 @@ public class TestCuentaMovimiento {
 	void testIngresarDineroConFecha(double cantidad) {
 		try {
 			cuenta.ingresar(cantidad);
-			cuenta.mMovimientos.get(0).setFecha(new Date(2024, 1, 1));
+			Movimiento mov = cuenta.mMovimientos.get(0);
+			mov.setFecha(new Date(2024, 1, 1));
+			assertThat(mov.getConcepto(), is("Ingreso en efectivo"));
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
@@ -90,6 +93,7 @@ public class TestCuentaMovimiento {
 	void testIngresarDineroConConcepto(String concepto, double cantidad) {
 		try {
 			cuenta.ingresar(concepto, cantidad);
+			assertThat(cuenta.mMovimientos.size(), is(1));
 		} catch (Exception ex) {
 			System.out.println(concepto + ": " + ex.getMessage());
 		}
@@ -107,6 +111,22 @@ public class TestCuentaMovimiento {
 		} catch (Exception ex) {
 			System.out.println(concepto + ": " + ex.getMessage());
 		}
+	}
+	
+	@Test
+	void testSaldoTotal() {
+        for (Double cantidad : cantidades().toArray(Double[]::new)) {
+            try {
+                cuenta.ingresar(cantidad);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+		double saldo = cantidades()
+	                   .filter(cantidad -> cantidad > 0)
+	                   .mapToDouble(Double::doubleValue)
+	                   .sum();
+        assertThat(cuenta.getSaldo(), is(saldo));
 	}
 	
 	static Stream<Double> cantidades() {
